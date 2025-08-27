@@ -60,9 +60,6 @@ const ProtectedRoute = ({ children, requireOnboarding = false }: ProtectedRouteP
     return <Navigate to="/onboarding" replace />;
   }
 
-  if (!requireOnboarding && hasProfile === false) {
-    return <Navigate to="/onboarding" replace />;
-  }
 
   return <>{children}</>;
 };

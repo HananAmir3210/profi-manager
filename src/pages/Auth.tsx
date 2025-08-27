@@ -34,7 +34,7 @@ const Auth = () => {
         title: "Welcome back!",
         description: "Successfully signed in.",
       });
-      navigate('/');
+      navigate('/dashboard');
     }
     
     setIsLoading(false);

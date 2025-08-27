@@ -43,7 +43,7 @@ const Onboarding = () => {
         description: "Your business profile has been set up successfully.",
       });
       
-      navigate('/dashboard');
+      navigate('/');
     } catch (error: any) {
       toast({
         title: "Error",

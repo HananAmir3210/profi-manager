@@ -26,7 +26,7 @@ const Layout = ({ children }: LayoutProps) => {
   const navigate = useNavigate();
 
   const navigation = [
-    { name: 'Dashboard', href: '/', icon: LayoutDashboard },
+    { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
     { name: 'Clients', href: '/clients', icon: Users },
     { name: 'Invoices', href: '/invoices', icon: FileText },
     { name: 'Products', href: '/products', icon: Package },
