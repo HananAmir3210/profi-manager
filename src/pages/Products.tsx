@@ -137,20 +137,20 @@ const Products = () => {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 animate-fade-in">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-3xl font-bold">Products & Services</h1>
+          <h1 className="text-3xl font-bold text-foreground">Products & Services</h1>
           <p className="text-muted-foreground">Manage your products and services catalog</p>
         </div>
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <DialogTrigger asChild>
-            <Button>
+            <Button className="quick-action">
               <Plus className="h-4 w-4 mr-2" />
               Add Product
             </Button>
           </DialogTrigger>
-          <DialogContent>
+          <DialogContent className="animate-scale-in">
             <DialogHeader>
               <DialogTitle>Add New Product/Service</DialogTitle>
               <DialogDescription>
@@ -206,14 +206,14 @@ const Products = () => {
                 <Button type="button" variant="outline" onClick={() => setIsDialogOpen(false)}>
                   Cancel
                 </Button>
-                <Button type="submit">Add Product</Button>
+                <Button type="submit" className="bg-primary hover:bg-primary/90">Add Product</Button>
               </div>
             </form>
           </DialogContent>
         </Dialog>
       </div>
 
-      <Card>
+      <Card className="animate-slide-up">
         <CardHeader>
           <div className="flex items-center space-x-2">
             <Search className="h-4 w-4" />
@@ -251,10 +251,10 @@ const Products = () => {
                 </TableRow>
               ) : (
                 filteredProducts.map((product) => (
-                  <TableRow key={product.id}>
+                  <TableRow key={product.id} className="hover:bg-muted/50 transition-colors">
                     <TableCell className="font-medium">{product.name}</TableCell>
                     <TableCell>{product.description || '-'}</TableCell>
-                    <TableCell>${product.price.toFixed(2)}</TableCell>
+                    <TableCell className="font-semibold">${product.price.toFixed(2)}</TableCell>
                     <TableCell>{product.tax_rate ? `${product.tax_rate}%` : '-'}</TableCell>
                     <TableCell className="text-right">
                       <DropdownMenu>
