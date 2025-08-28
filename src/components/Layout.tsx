@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { 
   Receipt, 
   LayoutDashboard, 
@@ -99,10 +99,14 @@ const Layout = ({ children }: LayoutProps) => {
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="w-64">
-              <div className="flex items-center space-x-2 mb-8">
-                <Receipt className="h-8 w-8 text-primary" />
-                <h1 className="text-xl font-bold text-primary">Invoizo</h1>
-              </div>
+              <SheetHeader>
+                <SheetTitle>
+                  <div className="flex items-center space-x-2">
+                    <Receipt className="h-8 w-8 text-primary" />
+                    <span className="text-xl font-bold text-primary">Invoizo</span>
+                  </div>
+                </SheetTitle>
+              </SheetHeader>
               <nav className="flex flex-col space-y-2">
                 <NavLinks mobile />
               </nav>
